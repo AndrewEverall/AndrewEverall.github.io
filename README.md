@@ -5,7 +5,7 @@ This will be regularly updated and improved as I learn more about building websi
 
 ## Upcoming improvements:
 
-### Build postfolio website to be accessed from andyeverall.github.io
+### Build portfolio website to be accessed from AndrewEverall.github.io
 ### Create self profile with pictures, links to cv/documents, description of my interests
 ### Include links to pages which are projects as a part of my training course with Udacity
 ### Develop some pages with information about my Astrophysics work
