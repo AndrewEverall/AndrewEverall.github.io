@@ -1,0 +1,21 @@
+
+
+.foreground { 
+	width: 100%;
+	position: absolute;
+	top: 100em;
+	left: 0;
+}
+
+.container {
+	width: 100%;
+}
+
+.profile {
+	display: block;
+	border: 3px solid #73AD21;
+	width: 300px;
+	margin-left: auto;
+	margin-right: 0px;
+}
+

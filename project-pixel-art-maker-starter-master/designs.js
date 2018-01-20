@@ -73,6 +73,26 @@ buildTable = function() {
 	nCols = $("#input_width").val();
 	makeTable(nRows, nCols);
 
+	$(".cell").css('border', '1px solid black')
+	$(".row").css('border', '1px solid black')
+
+	var cellColour = "#0000"
+	var backGround = "#0000"
+	var hoverColour = "#0000"
+	//$("#colorPicker").val() = cellColour
+
+	//When the "background colour" is changed, the full grid colour changes
+	$("#backGround").on("input", function(evt) {
+		colour = $("#backGround").val()
+		$(".cell").css( 'background-color', colour)
+	})
+	$("#backGround").on("input", function(evt) {
+		colour = $("#backGround").val()
+		$(".cell").css( 'background-color', colour)
+	})	
+
+
+	/* Drawing on the grid */
 	//Change colour of a grid square
 	//Must be run after the table is defined
 	$(".cell").on("click", function(evt) {
@@ -81,6 +101,36 @@ buildTable = function() {
 		console.log(colour)
 		$( evt.target ).css( 'background-color', colour)
 	})
+	//Double click on a cell reverts to background colour
+	$(".cell").on("dblclick", function(evt) {
+		console.log("Box dblclicked")
+		colour = $("#backGround").val()
+		console.log(colour)
+		$( evt.target ).css( 'background-color', colour)
+	})
+	//Variable which checks if the mouse is clicked
+	var MouseDown = false
+	$("body").on("mousedown", function(evt) {
+		MouseDown = true
+	})
+	$("body").on("mouseup", function(evt) {
+		MouseDown = false
+	})
+	$(".cell").on("mousemove", function(evt) {
+		if (MouseDown) {
+			colour = $("#colorPicker").val()
+			$( evt.target ).css( 'background-color', colour)
+		}
+	})
+/*	$(".cell").on("mouseover", function(evt) {
+		hoverColour = $( evt.target ).getAttribute( 'background-color' );
+		console.log(hoverColour);
+		$( evt.target ).css( 'background-color', '#009900' );
+	})
+	$(".cell").on("mouseleave", function(evt) {
+		colour = $("#backGround").val()
+		$( evt.target ).css( 'background-color', hoverColour )
+	})*/
 
 	return false;
 }

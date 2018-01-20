@@ -14,6 +14,15 @@ Good luck!
 
 */
 
+
+/*
 $(function(){
 	image = $("img").attr("src", "http://lorempixel.com/350/150/animals/")
 })
+*/
+
+function (fade_foreground) {
+	$(".foreground") {
+		
+	}
+}

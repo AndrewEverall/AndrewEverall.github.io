@@ -1,38 +1,117 @@
 body {
     text-align: center;
+    background-color: lightblue;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
+
 
 h1 {
-    font-family: Monoton;
-    font-size: 70px;
+    font-size: 50px;
     margin: 0.2em;
+    width: 100%;
+    order: 1;
+}
+h3 {
+    width: 100%;
+    font-size: 14px;
 }
 
-h2 {
-    margin: 1em 0 0.25em;
+#sizeHeader {
+    width: 50%;
+    order: 2;
+    height: 50px;
+}
+#sizePicker {
+    width: 50%;
+    order: 3;
+    height: 50px;
+    display: flex;
+    flex-wrap: wrap;
+}
+#colourHeader {
+    width: 50%;
+    order: 4;
+    height: 50px;
+}
+#colourPicker {
+    width:50%;
+    order: 5;
+    height: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+#designHeader {
+    width: 100%;
+    order: 6;
+    height: 50px;
+}
+/* Set the maximum grid width to the width of the page */
+#pixelCanvas{
+  max-width: 100%;
+  order: 7;
+}
+#pixel-canvas{
+  max-width: 100%;
+  padding-top: 100%;
+  position: relative;
+  max-height: 100%;
 }
 
-h2:first-of-type {
-    margin-top: 0.5em;
-}
+/* Flex wrap design for size picking */
+#height { width: 50%; order: 1}
+#width { width: 50%; order: 2}
+#buildD { width: 100%; padding-top: 5px; order: 3}
+#buildB { vertical-align: 50%; }
 
+/* Flex wrap design for colour picking */
+#cellColour { width: 50%; order: 1;}
+#backgroundColour { width: 50%; order: 2;}
+
+
+
+/* Display canvas */
 table,
 tr,
 td {
     border: 1px solid black;
 }
-
 table {
     border-collapse: collapse;
     margin: 0 auto;
+    max-width: 100%;
 }
-
 tr {
     height: 20px;
 }
-
 td {
     width: 20px;
+}
+
+table {
+  max-width: 100%;
+}
+td {
+  position: relative;
+}
+td:after {
+  content: '';
+  display: block;
+  margin-top: 100%;
+}
+td .content {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: gold;
 }
 
 
@@ -40,34 +119,35 @@ input[type=number] {
     width: 6em;
 }
 
-.grid {
+
+.testgrid {
   margin: 0 auto;
-  width: 80vw;
+  width: 10vw;
   max-width: 60vh;
   height: 80vw;
   max-height: 60vh;
   font-size: 1rem;
 }
-.row {
+.testrow {
   display: flex;
 }
-.box {
+.testbox {
   background: tomato;
-  //margin: 5px;
+  margin: 5px;
   color: white;
   font-weight: bold;
   flex: 1 0 auto;
   position: relative;
   border: 5px solid black;
 }
-.box:after {
+.testbox:after {
   content: "";
   float:left;
   display: block;
   padding-top: 100%;
 }
 
-.box .inner {
+.testbox .inner {
   position: absolute;
   left: 0;
   right: 0;

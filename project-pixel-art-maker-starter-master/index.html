@@ -6,39 +6,50 @@
     <link rel="stylesheet" href="styles.css">
 
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script src="designs.js"></script>
 </head>
+
+
 <body>
-    <h1>Lab: Pixel Art Maker</h1>
+    <h1>Pixel Art Maker</h1>
 
-    <h2>Choose Grid Size</h2>
-    <form id="sizePicker">
-        Grid Height:
-        <input type="number" id="input_height" name="height" min="1" value="10">
-        Grid Width:
-        <input type="number" id="input_width" name="width" min="1" value="10">
-        <input type="button" onclick="buildTable()" value="Build Grid">
-    </form>
-
-    <h2>Pick A Color</h2>
-    <input type="color" id="colorPicker">
-
-    <h2 id="design">Design Canvas</h2>
-    <table id="pixel_canvas">
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-    </table>
-
-    <div>
-        <button id="my-button">Click me!</button>
+    <h2 id="sizeHeader">Grid Size</h2>
+    <div id="sizePicker">
+        <div id="height">
+            <h3> Grid Height </h3>
+            <input type="number" id="input_height" name="height" min="1" value="30">
+        </div>
+        <div id="width">
+            <h3> Grid Width </h3>
+            <input type="number" id="input_width" name="width" min="1" value="30">
+        </div>
+        <div id="buildD">
+            <input type="button" id="buildB" onclick="buildTable()" value="Build Grid">
+        </div>
     </div>
 
+    <h2 id="colourHeader">Pick A Colour</h2>
+    <div id="colourPicker">
+        <div id="cellColor">
+            <h3>Cell colour</h3>
+            <input type="color" id="colorPicker">
+        </div>
+        <div id="backgroundColour">
+            <h3>Background colour</h3>
+            <input type="color" id="backGround">
+        </div>
+    </div>
 
+    <h2 id="designHeader">Design Canvas</h2>
+    <div id="pixelCanvas">
+        <table id = "pixel_canvas">
+            <tr>
+            </tr>
+        </table>
+    </div>
 
 </body>
 </html>
