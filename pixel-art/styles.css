@@ -22,36 +22,64 @@ h3 {
     font-size: 14px;
 }
 
-#sizeHeader {
-    width: 50%;
+#gridOptions {
+    width: 100%;
     order: 2;
-    height: 50px;
-}
-#sizePicker {
-    width: 50%;
-    order: 3;
-    height: 50px;
     display: flex;
     flex-wrap: wrap;
 }
+#reset {
+    width:100%;
+    text-align: center;
+    order: 2;
+    display: none;
+    flex-wrap: wrap;
+}
+#drawOptions {
+    width: 100%;
+    order: 3;
+    display: none;
+    flex-wrap: wrap;
+}
+
+#sizeHeader {
+    width: 50%;
+    order: 1;
+    height: 70px;
+}
+#sizePicker {
+    width: 50%;
+    order: 2;
+    height: 70px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
 #colourHeader {
     width: 50%;
-    order: 4;
-    height: 50px;
+    order: 1;
+    height: 70px;
 }
 #colourPicker {
     width:50%;
-    order: 5;
-    height: 50px;
+    order: 2;
+    height: 70px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
 }
-#designHeader {
-    width: 100%;
-    order: 6;
-    height: 50px;
+.gridD {
+  width: 100%;
+  order: 3;
+  height: 70px;
 }
+
+#bound1{ width: 35%; order: 1; }
+#resetB{ 
+  width: 30%; order: 2; 
+  border: solid; cursor: pointer;}
+#bound2{ width: 35%; order: 3; }
+
 /* Set the maximum grid width to the width of the page */
 #pixelCanvas{
   max-width: 100%;
@@ -61,7 +89,7 @@ h3 {
   max-width: 100%;
   padding-top: 100%;
   position: relative;
-  max-height: 100%;
+  max-height: 600px;
 }
 
 /* Flex wrap design for size picking */
@@ -71,18 +99,18 @@ h3 {
 #buildB { vertical-align: 50%; }
 
 /* Flex wrap design for colour picking */
-#cellColour { width: 50%; order: 1;}
-#backgroundColour { width: 50%; order: 2;}
+#cColour { width: 50%; order: 1;}
+#bgColour { width: 50%; order: 2;}
 
 
 
 /* Display canvas */
-table,
 tr,
 td {
     border: 1px solid black;
 }
 table {
+    border: 3px solid green;
     border-collapse: collapse;
     margin: 0 auto;
     max-width: 100%;

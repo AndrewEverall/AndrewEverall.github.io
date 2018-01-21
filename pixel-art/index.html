@@ -16,40 +16,52 @@
 <body>
     <h1>Pixel Art Maker</h1>
 
-    <h2 id="sizeHeader">Grid Size</h2>
-    <div id="sizePicker">
-        <div id="height">
-            <h3> Grid Height </h3>
-            <input type="number" id="input_height" name="height" min="1" value="30">
+    <section id="gridOptions">
+        <h2 id="sizeHeader">Grid Size</h2>
+        <div id="sizePicker">
+            <div id="height">
+                <h3> Grid Height </h3>
+                <input type="number" id="input_height" name="height" min="1" value="30">
+            </div>
+            <div id="width">
+                <h3> Grid Width </h3>
+                <input type="number" id="input_width" name="width" min="1" value="30">
+            </div>
+            <div id="buildD">
+                <input type="button" id="buildB" onclick="buildTable()" value="Build Grid">
+            </div>
         </div>
-        <div id="width">
-            <h3> Grid Width </h3>
-            <input type="number" id="input_width" name="width" min="1" value="30">
-        </div>
-        <div id="buildD">
-            <input type="button" id="buildB" onclick="buildTable()" value="Build Grid">
-        </div>
-    </div>
+    </section>
 
-    <h2 id="colourHeader">Pick A Colour</h2>
-    <div id="colourPicker">
-        <div id="cellColor">
-            <h3>Cell colour</h3>
-            <input type="color" id="colorPicker">
-        </div>
-        <div id="backgroundColour">
-            <h3>Background colour</h3>
-            <input type="color" id="backGround">
-        </div>
-    </div>
+    <section id="reset">
+        <div id="bound1"></div>
+        <div id="resetB">Reset Grid</div>
+        <div id="bound2"></div>
+    </section>
 
-    <h2 id="designHeader">Design Canvas</h2>
-    <div id="pixelCanvas">
-        <table id = "pixel_canvas">
-            <tr>
-            </tr>
-        </table>
-    </div>
+    <section id="drawOptions">
+        <h2 id="colourHeader">Pick A Colour</h2>
+        <div id="colourPicker">
+            <div id="cColour">
+                <h3>Cell colour</h3>
+                <input type="color" id="colorPicker">
+            </div>
+            <div id="bgColour">
+                <h3>Background colour</h3>
+                <input type="color" id="backGround" value="#ffffff">
+            </div>
+        </div>
+        <div class="gridD">
+            <input type="button" class="gridButton" value="Hide Lines">
+        </div>
+
+        <div id="pixelCanvas">
+            <table id = "pixel_canvas">
+                <tr>
+                </tr>
+            </table>
+        </div>
+    </section>
 
 </body>
 </html>

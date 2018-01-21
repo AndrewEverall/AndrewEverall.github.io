@@ -73,13 +73,11 @@ buildTable = function() {
 	nCols = $("#input_width").val();
 	makeTable(nRows, nCols);
 
-	$(".cell").css('border', '1px solid black')
-	$(".row").css('border', '1px solid black')
-
 	var cellColour = "#0000"
-	var backGround = "#0000"
+	var backGround = "#ffffff"
 	var hoverColour = "#0000"
-	//$("#colorPicker").val() = cellColour
+	
+	$(".cell").css('background-color', backGround)
 
 	//When the "background colour" is changed, the full grid colour changes
 	$("#backGround").on("input", function(evt) {
@@ -90,6 +88,18 @@ buildTable = function() {
 		colour = $("#backGround").val()
 		$(".cell").css( 'background-color', colour)
 	})	
+
+	// Grid display button changes whether gridlines are seen
+  	gridLines = true
+  	$(".gridButton").on("click", function(evt) {
+  		if (gridLines) {
+  			$("td, tr").css("border", "none");
+  			gridLines=false;
+  		} else {
+  			$("td, tr").css("border", "1px solid black");
+  			gridLines=true;
+  		}
+  	})
 
 
 	/* Drawing on the grid */
@@ -131,6 +141,26 @@ buildTable = function() {
 		colour = $("#backGround").val()
 		$( evt.target ).css( 'background-color', hoverColour )
 	})*/
+
+	// Slide in drawing options
+	//$("#drawOptions").delay(100).slideDown(800)
+	//$("#drawOptions").style.transform = "rotate(7deg)";
+
+	$("#gridOptions").css("display", "none")
+	$("#drawOptions").css("display", "flex")
+	$("#reset").css("display", "flex")
+
+	//Go back to initial menu on reset click
+	$("#resetB").click(function(evt) {
+		$("#gridOptions").css("display", "flex")
+		$("#drawOptions").css("display", "none")
+		$("#reset").css("display", "none")
+	})
+
+	//resetMouse = false
+	//$("#resetB").mouseover(function {
+
+	//})
 
 	return false;
 }
